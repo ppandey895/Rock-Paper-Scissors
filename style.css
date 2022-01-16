@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+html {
+	font-size: 14px;
+
+}
+
+* {
+	font-family: 'Bebas Neue', 'Corbel';
+	color: #454545;
+	letter-spacing: 0.2rem;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	box-sizing: border-box;
+	background: linear-gradient(135deg, #CBD83E, #E9C030);
+	background-repeat: no-repeat;
+	background-size: 400% 400%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	animation: backGradient 5s infinite;
+}
+
+div.container {
+	width: 80vw;
+	height:90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255,255,255,0.3);
+	filter: blur(0.4px);
+	border-radius: 8px;
+	box-shadow: 10px 10px 20px rgba(0,0,0,0.1), -10px -10px 25px rgba(255,255,255,0.7);
+}
+
+div.intro {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 8px;
+	text-align: center;
+	padding: 15px;
+	font-size: 1.5rem;
+}
+
+div.intro h1 {
+	margin: 0 0 80px;
+}
+
+button {
+	margin: 0 20px;
+	width: fit-content;
+	background: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 10px;
+	color: #E9C030;
+	font-size: 1.5rem;
+	transition: all 0.5s;
+}
+
+button:hover {
+	transform: scale(1.1, 1.1);
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+button:disabled {
+	background: rgba(0,0,0,0.2);
+}
+
+button:disabled:hover {
+	box-shadow: none;
+	transform: none;
+}
+
+div.main-game {
+	visibility: hidden;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+div.main-game div.game-box {
+	width: 60%;
+	display: flex;
+	justify-content: space-evenly;
+	text-align: center;
+}
+
+div.game-box div img {
+	height: 8rem;
+}
+
+div.user img.shake-hand {
+	animation: shakeUser 0.8s ease-out 2;
+}
+
+div.bot img.shake-hand {
+	animation: shakeBot 0.8s ease-out 2;
+}
+
+div.bot img {
+	transform: scaleX(-1);
+}
+
+div.bot h3, div.user h3 {
+	font-size: 1.2rem;
+}
+
+@keyframes backGradient {
+	0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+
+}
+
+@keyframes shakeUser {
+	10% {transform: translateY(5px);}
+	20% {transform: translateY(10px);}
+	60% {transform: translateY(-10px);}
+	90% {transform: translateY(-5px);}
+}
+
+@keyframes shakeBot {
+	10% {transform: translateY(5px) scaleX(-1);}
+	20% {transform: translateY(10px) scaleX(-1);}
+	60% {transform: translateY(-10px) scaleX(-1);}
+	90% {transform: translateY(-5px) scaleX(-1);}
+}
+
+footer {
+	position: absolute;
+	bottom: 5px;
+}
+
+@media (max-width: 768px) {
+	html {
+		font-size: 10px;
+	}
+
+	button {
+		margin: 0 10px;
+	}
+
+	div.main-game div.game-box {
+		width: 80%;
+	}
+}
