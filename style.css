@@ -16,7 +16,7 @@ body {
 	padding: 0;
 	height: 100vh;
 	box-sizing: border-box;
-	background: linear-gradient(135deg, #dded31, #f9c922));
+	background: linear-gradient(135deg, #dded31, #f9c922);
 	background-repeat: no-repeat;
 	background-size: 400% 400%;
 	display: flex;
